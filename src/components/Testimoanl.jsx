@@ -54,10 +54,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl text-gray-900 font-bold mb-6 tracking-tight drop-shadow-lg">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl text-gray-900 font-bold mb-6 tracking-tight drop-shadow-lg">
             Voices of Elegance
           </h2>
-          <p className="font-['Lora'] text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-md">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-md">
             Hear what our happy clients have to say about their experience at Neva's Beauty.
             Real results, real reviews—from glowing skin to flawless brows and beyond!
           </p>
@@ -88,10 +88,10 @@ const Testimonials = () => {
                     <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(255,182,193,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                     
                     <FaQuoteLeft className="absolute top-4 sm:top-6 left-4 sm:left-6 text-rose-300 opacity-30 text-2xl sm:text-3xl" />
-                    <p className="font-['Lora'] text-gray-700 text-base sm:text-lg leading-relaxed mb-6 mt-8 sm:mt-10 relative z-10">
+                    <p className="font-sans text-gray-700 text-base sm:text-lg leading-relaxed mb-6 mt-8 sm:mt-10 relative z-10">
                       {testimonial.quote}
                     </p>
-                    <h4 className="font-['Playfair_Display'] text-lg sm:text-xl text-rose-500 font-semibold text-right relative z-10">
+                    <h4 className="font-sans text-lg sm:text-xl text-rose-500 font-semibold text-right relative z-10">
                       — {testimonial.author}
                     </h4>
                   </motion.div>

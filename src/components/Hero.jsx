@@ -45,15 +45,15 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 max-w-4xl">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-xl animate__animated animate__fadeIn">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight font-sans drop-shadow-xl animate__animated animate__fadeIn">
           Welcome to Neva's Beauty
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 font-['Lora'] text-white/90 drop-shadow-md animate__animated animate__fadeIn animate__delay-1s">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 font-sans text-white/90 drop-shadow-md animate__animated animate__fadeIn animate__delay-1s">
           Experience expert care, luxurious treatments, and radiant results in a space where beauty meets relaxation.
         </p>
         <a
           href="#booking"
-          className="inline-block bg-rose-400  py-3 px-8 sm:px-10 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 text-sm sm:text-base animate__animated animate__fadeIn animate__delay-2s"
+          className="inline-block bg-rose-700  py-3 px-8 sm:px-10 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 text-sm sm:text-base animate__animated animate__fadeIn animate__delay-2s"
         >
           Reserve Your Appointment
         </a>

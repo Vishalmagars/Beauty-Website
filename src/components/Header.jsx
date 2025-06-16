@@ -53,65 +53,76 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 w-full z-50 font-['Inter',sans-serif] transition-shadow duration-300 bg-white mb-16 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}
+        className={` top-0 left-0 w-full sm:w-[calc(100%-1rem)] z-50 font-['Inter',sans-serif] transition-shadow duration-300 bg-white sm:mx-2 sm:my-2 sm:rounded-xl ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="https://via.placeholder.com/120x40/FFFFFF/1E3A8A?text=Luxe+Logo"
+              src="https://nevasbeauty.com/banner_logo.jpg"
               alt="Luxe Nail Studio Logo"
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden md:flex space-x-8 items-center">
             <Link
               to="/"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
             >
               Home
             </Link>
 
-            <div className="relative group">
+            <div className="relative">
               <button
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 flex items-center"
+                className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200 flex items-center"
                 onClick={toggleServices}
               >
                 Services
-                <FaChevronDown className="ml-1 text-gray-500" />
+                <motion.span
+                  animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FaChevronDown className="ml-2 text-gray-500" />
+                </motion.span>
               </button>
-              <motion.div
-                className="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-48 border border-gray-100"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {services.map((service) => (
-                  <Link
-                    key={service.path}
-                    to={service.path}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    className="absolute bg-white shadow-lg rounded-lg mt-3 w-56 border border-gray-100 py-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {service.label}
-                  </Link>
-                ))}
-              </motion.div>
+                    {services.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-colors duration-200"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link
               to="/portfolio"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
             >
               Portfolio
             </Link>
             <Link
               to="/book"
-              className="inline-block bg-navy-600 text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-navy-700 transition-colors duration-200"
+              className="inline-block bg-rose-600 text-white py-2.5 px-6 rounded-lg text-base font-semibold hover:bg-rose-500 transition-colors duration-200 shadow-sm"
             >
               Book Now
             </Link>
@@ -119,7 +130,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-lg focus:outline-none text-gray-700"
+            className="md:hidden text-xl focus:outline-none text-gray-800"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -152,16 +163,16 @@ const Header = () => {
               <div className="flex flex-col items-start px-4 py-5 space-y-5 h-full">
                 <Link to="/" className="flex items-center" onClick={toggleMenu}>
                   <img
-                    src="https://nevasbeauty.com/banner_slogan.jpg"
+                    src="https://via.placeholder.com/120x40/FFFFFF/1E3A8A?text=Luxe+Logo"
                     alt="Luxe Nail Studio Logo"
-                    className="h-8 w-auto object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </Link>
 
-                <div className="flex flex-col space-y-3 w-full">
+                <div className="flex flex-col space-y-4 w-full">
                   <Link
                     to="/"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                    className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
                     onClick={toggleMenu}
                   >
                     Home
@@ -169,44 +180,51 @@ const Header = () => {
 
                   <div className="flex flex-col">
                     <button
-                      className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 flex items-center"
+                      className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200 flex items-center"
                       onClick={toggleServices}
                     >
                       Services
-                      <FaChevronDown className="ml-1 text-gray-500" />
-                    </button>
-                    {isServicesOpen && (
-                      <motion.div
-                        className="flex flex-col pl-4 mt-2 space-y-2"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
+                      <motion.span
+                        animate={{ rotate: isServicesOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        {services.map((service) => (
-                          <Link
-                            key={service.path}
-                            to={service.path}
-                            className="text-xs text-gray-700 hover:text-gray-900 transition-colors duration-200"
-                            onClick={toggleMenu}
-                          >
-                            {service.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
+                        <FaChevronDown className="ml-2 text-gray-500" />
+                      </motion.span>
+                    </button>
+                    <AnimatePresence>
+                      {isServicesOpen && (
+                        <motion.div
+                          className="flex flex-col pl-4 mt-2 space-y-2"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {services.map((service) => (
+                            <Link
+                              key={service.path}
+                              to={service.path}
+                              className="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors duration-200"
+                              onClick={toggleMenu}
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   <Link
                     to="/portfolio"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                    className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
                     onClick={toggleMenu}
                   >
                     Portfolio
                   </Link>
                   <Link
                     to="/book"
-                    className="inline-block bg-navy-600 text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-navy-700 transition-colors duration-200 w-fit"
+                    className="inline-block bg-blue-600 text-white py-2.5 px-6 rounded-lg text-base font-semibold hover:bg-blue-700 transition-colors duration-200 w-fit shadow-sm"
                     onClick={toggleMenu}
                   >
                     Book Now

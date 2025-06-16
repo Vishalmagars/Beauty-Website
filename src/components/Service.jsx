@@ -175,7 +175,7 @@ function Services() {
  
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <motion.div
-          className="text-section mb-12 text-center sm:text-left"
+          className="text-section mb-12 sm:text-left"
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? 'visible' : 'hidden'}
