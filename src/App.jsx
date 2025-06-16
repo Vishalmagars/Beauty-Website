@@ -44,7 +44,11 @@ const App = () => {
             </div>
          } />
          <Route path="/waxing" element={<div className="min-h-screen bg-rose-50/50">
+<<<<<<< HEAD
               {/* <Header/> */}
+=======
+{/*               <Header/> */}
+>>>>>>> 877e3bc8a6be9ce97e1d04539eed7d5aba8af09e
             <Waxing/>
             <HeroBookingBanner/>
             <FindUs/>
