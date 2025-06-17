@@ -40,10 +40,10 @@ const Portfolio = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl text-gray-900 font-bold tracking-tight drop-shadow-lg">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl text-gray-900 font-bold tracking-tight drop-shadow-lg">
             Our Portfolio
           </h1>
-          <p className="font-['Lora'] text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mt-4 sm:mt-6">
+          <p className="font-sans text-gray-700 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto mt-4 sm:mt-6">
             Explore our portfolio to see the beauty transformations we’ve created for our happy clients.
 From stunning lash extensions to flawless brows and radiant skin—let our work speak for itself.
 Get inspired and discover the Neva's Beauty touch in every detail.
@@ -77,7 +77,7 @@ Get inspired and discover the Neva's Beauty touch in every detail.
               </div>
               {/* Service Name (Mobile) */}
               <div className="sm:hidden bg-white p-4 text-center border-t border-rose-200/50">
-                <h3 className="font-['Playfair_Display'] text-lg sm:text-xl text-rose-500 font-semibold tracking-tight">
+                <h3 className="font-sans text-lg sm:text-xl text-rose-500 font-semibold tracking-tight">
                   {item.service}
                 </h3>
               </div>

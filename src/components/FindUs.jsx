@@ -14,10 +14,10 @@ const FindUs = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl text-white font-bold tracking-tight drop-shadow-lg">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl text-white font-bold tracking-tight drop-shadow-lg">
             Visit Neva's Beauty
           </h1>
-          <p className="font-['Lora'] text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto mt-4 sm:mt-6">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto mt-4 sm:mt-6">
             Get in touch with us easily—whether you have questions or want to book an appointment.
             Find our contact information and location on the map below—we're just a visit away!
           </p>
@@ -35,26 +35,26 @@ const FindUs = () => {
           >
             {/* Contact Info */}
             <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl border border-rose-200/50 mb-6">
-              <h2 className="font-['Playfair_Display'] text-2xl sm:text-3xl text-rose-500 font-semibold mb-4">
+              <h2 className="font-sans text-2xl sm:text-3xl text-rose-500 font-semibold mb-4">
                 Get in Touch
               </h2>
-              <p className="font-['Lora'] text-base sm:text-lg text-gray-700 leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-gray-700 leading-relaxed">
                 <strong>Address:</strong> 2439 Lombard Street, San Francisco, CA 94123
               </p>
-              <p className="font-['Lora'] text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
+              <p className="font-sans text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
                 <strong>Phone:</strong> 415-346-2238
               </p>
-              <p className="font-['Lora'] text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
+              <p className="font-sans text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
                 <strong>Email:</strong> neva@nevasbeauty.com
               </p>
-              <p className="font-['Lora'] text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
+              <p className="font-sans text-base sm:text-lg text-gray-700 leading-relaxed mt-2">
                 <strong>Hours:</strong> Mon-Sat: 10 AM - 7 PM, Sun: 10 AM - 6 PM
               </p>
             </div>
 
             {/* Social Links and Yelp */}
             <div className="flex flex-col items-center sm:items-start">
-              <h3 className="font-['Playfair_Display'] text-xl sm:text-2xl text-white font-semibold mb-4">
+              <h3 className="font-sans text-xl sm:text-2xl text-white font-semibold mb-4">
                 Connect With Us
               </h3>
               <div className="flex gap-4">

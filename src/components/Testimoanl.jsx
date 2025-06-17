@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaQuoteLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useSwipeable } from 'react-swipeable';
 
 const testimonials = [
   {
@@ -43,8 +44,16 @@ const Testimonials = () => {
     setCurrentIndex(index);
   };
 
+  // Swipe handlers for mobile
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleNext(),
+    onSwipedRight: () => handlePrev(),
+    trackMouse: false, // Disable mouse tracking to avoid conflicts with desktop hover
+    delta: 10, // Minimum swipe distance
+  });
+
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-rose-100/50 to-white">
+    <section className="py-16 sm:py-24 bg-gradient-to-b from-rose-100/50 to-white w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Left Side: Title and Content */}
         <motion.div
@@ -54,10 +63,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl text-gray-900 font-bold mb-6 tracking-tight drop-shadow-lg">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl text-gray-700 font-bold mb-6 tracking-tight drop-shadow-lg">
             Voices of Elegance
           </h2>
-          <p className="font-sans text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-md">
+          <p className="font-sans text-gray-700 text-lg sm:text-xl leading-relaxed max-w-md">
             Hear what our happy clients have to say about their experience at Neva's Beauty.
             Real results, real reviews—from glowing skin to flawless brows and beyond!
           </p>
@@ -69,6 +78,7 @@ const Testimonials = () => {
             className="relative w-full overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            {...swipeHandlers}
           >
             <motion.div
               className="flex"
@@ -99,16 +109,16 @@ const Testimonials = () => {
               ))}
             </motion.div>
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows (Hidden on Mobile) */}
             <button
-              className="absolute top-1/2 left-0 sm:left-4 transform -translate-y-1/2 text-rose-400 hover:text-rose-500 text-xl sm:text-2xl focus:outline-none transition-colors duration-300"
+              className="hidden md:block absolute top-1/2 left-0 sm:left-4 transform -translate-y-1/2 text-rose-400 hover:text-rose-500 text-xl sm:text-2xl focus:outline-none transition-colors duration-300"
               onClick={handlePrev}
               aria-label="Previous testimonial"
             >
               <FaArrowLeft />
             </button>
             <button
-              className="absolute top-1/2 right-0 sm:right-4 transform -translate-y-1/2 text-rose-400 hover:text-rose-500 text-xl sm:text-2xl focus:outline-none transition-colors duration-300"
+              className="hidden md:block absolute top-1/2 right-0 sm:right-4 transform -translate-y-1/2 text-rose-400 hover:text-rose-500 text-xl sm:text-2xl focus:outline-none transition-colors duration-300"
               onClick={handleNext}
               aria-label="Next testimonial"
             >

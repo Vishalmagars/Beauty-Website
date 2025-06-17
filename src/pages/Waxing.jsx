@@ -39,7 +39,7 @@ const WaxingPremiumAlt = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-rose-50 via-white to-rose-50 p-8 font-sans text-gray-900">
+    <section className="min-h-screen bg-rose-50 p-4 font-sans text-gray-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.header
@@ -48,10 +48,10 @@ const WaxingPremiumAlt = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
           className="mb-12 text-center"
         >
-          <h1 className="text-3xl sm:text-5xl font-extrabold mt-4 w-full mx-auto text-gray-700 text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 w-full mx-auto text-gray-700 text-left">
             Waxing Services
           </h1>
-          <p className="mt-4 w-full mx-auto text-lg text-gray-700 text-left">
+          <p className="mt-4 w-full mx-auto  text-gray-700 text-lg sm:text-xl text-left">
             Discover our premium waxing treatments designed to pamper you with smooth, radiant skin.
           </p>
         </motion.header>
@@ -61,7 +61,7 @@ const WaxingPremiumAlt = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
         >
           {waxingServices.map(({ name, price, desc }, idx) => (
             <motion.div

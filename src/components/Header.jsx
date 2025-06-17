@@ -39,47 +39,56 @@ const Header = () => {
     setIsServicesOpen((prev) => !prev);
   };
 
-  const services = [
-    { path: '/services/luxury-manicures', label: 'Luxury Manicures' },
-    { path: '/services/pedicures', label: 'Pedicures' },
-    { path: '/services/nail-art', label: 'Nail Art' },
-    { path: '/services/gel-polish', label: 'Gel Polish' },
-    { path: '/services/acrylics', label: 'Acrylics' },
-    { path: '/services/spa-treatments', label: 'Spa Treatments' },
-    { path: '/services/nail-repair', label: 'Nail Repair' },
-    { path: '/services/custom-designs', label: 'Custom Designs' },
-  ];
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  };
+
+ const services = [
+  { path: '/waxing', label: 'WAXING' },
+  { path: '/make-up', label: 'MAKE UP' },
+  { path: '/facials', label: 'FACIALS' },
+  { path: '/tinting', label: 'TINTING' },
+  { path: '/eyelashes', label: 'EYELASHES' },
+  { path: '/mani-pedi', label: 'MANI & PEDI' },
+  { path: '/massage', label: 'MASSAGE' },
+  { path: '/sugaring', label: 'SUGARING' },
+];
+
 
   return (
     <>
       <motion.header
-        className={` top-0 left-0 w-full sm:w-[calc(100%-1rem)] z-50 font-['Inter',sans-serif] transition-shadow duration-300 bg-white sm:mx-2 sm:my-2 sm:rounded-xl ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}
+        className={`w-full z-50 font-['Inter',sans-serif] transition-all duration-300 ${
+          isScrolled ? 'bg-gradient-to-r from-rose-50 to-rose-100 shadow-lg' : 'bg-white shadow-md'
+        }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={closeMenu}>
             <img
               src="https://nevasbeauty.com/banner_logo.jpg"
               alt="Luxe Nail Studio Logo"
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden md:flex space-x-10 items-center">
             <Link
               to="/"
-              className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
+              className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-rose-600 after:transition-all after:duration-300 hover:after:w-full"
+              onClick={closeMenu}
             >
               Home
             </Link>
 
             <div className="relative">
               <button
-                className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200 flex items-center"
+                className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300 flex items-center"
                 onClick={toggleServices}
               >
                 Services
@@ -93,7 +102,7 @@ const Header = () => {
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    className="absolute bg-white shadow-lg rounded-lg mt-3 w-56 border border-gray-100 py-2"
+                    className="absolute top-full left-0 bg-white shadow-xl rounded-lg mt-4 w-64 border border-rose-100 py-3 z-50"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -103,8 +112,8 @@ const Header = () => {
                       <Link
                         key={service.path}
                         to={service.path}
-                        className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-colors duration-200"
-                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-colors duration-200"
+                        onClick={closeMenu}
                       >
                         {service.label}
                       </Link>
@@ -116,13 +125,15 @@ const Header = () => {
 
             <Link
               to="/portfolio"
-              className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
+              className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-rose-600 after:transition-all after:duration-300 hover:after:w-full"
+              onClick={closeMenu}
             >
               Portfolio
             </Link>
             <Link
               to="/book"
-              className="inline-block bg-rose-600 text-white py-2.5 px-6 rounded-lg text-base font-semibold hover:bg-rose-500 transition-colors duration-200 shadow-sm"
+              className="inline-block bg-gradient-to-r from-rose-500 to-rose-600 text-white py-2.5 px-8 rounded-full text-base font-semibold hover:from-rose-600 hover:to-rose-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              onClick={closeMenu}
             >
               Book Now
             </Link>
@@ -130,7 +141,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-xl focus:outline-none text-gray-800"
+            className="md:hidden text-2xl focus:outline-none text-gray-800 hover:text-rose-600 transition-colors duration-200"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -145,42 +156,42 @@ const Header = () => {
         {isMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/30 z-40"
+              className="fixed inset-0 bg-black/40 z-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              onClick={toggleMenu}
+              onClick={closeMenu}
             />
             <motion.nav
               ref={menuRef}
-              className="md:hidden fixed top-0 left-0 h-screen w-4/5 z-50 bg-white shadow-lg border-r border-gray-100"
+              className="md:hidden fixed top-0 left-0 h-screen w-80 max-w-[80%] z-50 bg-gradient-to-b from-rose-50 to-white shadow-2xl border-r border-rose-100"
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              <div className="flex flex-col items-start px-4 py-5 space-y-5 h-full">
-                <Link to="/" className="flex items-center" onClick={toggleMenu}>
+              <div className="flex flex-col items-start px-6 py-6 space-y-6 h-full">
+                <Link to="/" className="flex items-center" onClick={closeMenu}>
                   <img
-                    src="https://via.placeholder.com/120x40/FFFFFF/1E3A8A?text=Luxe+Logo"
+                    src="https://nevasbeauty.com/banner_logo.jpg"
                     alt="Luxe Nail Studio Logo"
-                    className="h-10 w-auto object-contain"
+                    className="h-12 w-auto object-contain"
                   />
                 </Link>
 
-                <div className="flex flex-col space-y-4 w-full">
+                <div className="flex flex-col space-y-5 w-full">
                   <Link
                     to="/"
-                    className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
-                    onClick={toggleMenu}
+                    className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300"
+                    onClick={closeMenu}
                   >
                     Home
                   </Link>
 
                   <div className="flex flex-col">
                     <button
-                      className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200 flex items-center"
+                      className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300 flex items-center"
                       onClick={toggleServices}
                     >
                       Services
@@ -194,7 +205,7 @@ const Header = () => {
                     <AnimatePresence>
                       {isServicesOpen && (
                         <motion.div
-                          className="flex flex-col pl-4 mt-2 space-y-2"
+                          className="flex flex-col pl-4 mt-3 space-y-3"
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
@@ -204,8 +215,8 @@ const Header = () => {
                             <Link
                               key={service.path}
                               to={service.path}
-                              className="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors duration-200"
-                              onClick={toggleMenu}
+                              className="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors duration-300"
+                              onClick={closeMenu}
                             >
                               {service.label}
                             </Link>
@@ -217,15 +228,15 @@ const Header = () => {
 
                   <Link
                     to="/portfolio"
-                    className="text-base font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-200"
-                    onClick={toggleMenu}
+                    className="text-lg font-semibold text-gray-800 hover:text-rose-600 transition-colors duration-300"
+                    onClick={closeMenu}
                   >
                     Portfolio
                   </Link>
                   <Link
                     to="/book"
-                    className="inline-block bg-blue-600 text-white py-2.5 px-6 rounded-lg text-base font-semibold hover:bg-blue-700 transition-colors duration-200 w-fit shadow-sm"
-                    onClick={toggleMenu}
+                    className="inline-block bg-gradient-to-r from-rose-500 to-rose-600 text-white py-2.5 px-8 rounded-full text-base font-semibold hover:from-rose-600 hover:to-rose-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                    onClick={closeMenu}
                   >
                     Book Now
                   </Link>

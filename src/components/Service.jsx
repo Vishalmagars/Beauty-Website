@@ -11,6 +11,7 @@ import {
   faTint,
   faHands,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Services() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,60 +22,61 @@ function Services() {
     {
       icon: faSpa,
       title: 'Waxing',
-      description: 'Smooth, radiant skin with professional waxing.',
-      path: '/services/waxing',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Achieve smooth, radiant skin with our expert waxing services. We use high-quality wax to ensure gentle hair removal. Ideal for long-lasting smoothness and minimal irritation. Perfect for any area of the body.',
+      path: '/waxing',
+      image: 'https://images.unsplash.com/photo-1700760933941-3a06a28fbf47?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       icon: faLeaf,
       title: 'Sugaring',
-      description: 'Gentle, natural hair removal with sugaring.',
-      path: '/services/sugaring',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Enjoy a gentle and natural alternative to waxing. Sugaring is ideal for sensitive skin and removes hair effectively using a sugar-based paste. It exfoliates the skin while minimizing discomfort and irritation.',
+      path: '/sugaring',
+      image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       icon: faPaintBrush,
       title: 'Makeup',
-      description: 'Flawless makeup for any occasion.',
-      path: '/services/makeup',
+      description: 'From natural to glam, our professional makeup artists create flawless looks for any occasion. Whether it’s a wedding, party, or photoshoot, we tailor each look to highlight your unique features.',
+      path: '/makeup',
       image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
     },
     {
       icon: faEye,
       title: 'Eyelashes',
-      description: 'Lash extensions and lifts for stunning eyes.',
-      path: '/services/eyelashes',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Enhance your eyes with our lash services, including extensions, lifts, and tints. We offer styles from subtle to dramatic, using high-quality products that are safe, comfortable, and long-lasting.',
+      path: '/eyelashes',
+      image: 'https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RXllbGFzaGVzfGVufDB8fDB8fHwy',
     },
     {
       icon: faStar,
       title: 'Facials',
-      description: 'Rejuvenating facials for glowing skin.',
-      path: '/services/facials',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Refresh and rejuvenate your skin with our custom facials. Whether you need hydration, deep cleansing, or anti-aging care, we use top-tier products and techniques tailored to your skin type.',
+      path: '/facials',
+      image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RmFjaWFsc3xlbnwwfHwwfHx8Mg%3D%3D',
     },
     {
       icon: faTint,
       title: 'Tinting',
-      description: 'Bold eyebrow and eyelash tinting.',
-      path: '/services/tinting',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Define your look with eyebrow and eyelash tinting. This quick, effective treatment enhances color and fullness without makeup. Great for highlighting natural beauty with lasting results.',
+      path: '/tinting',
+      image: 'https://images.unsplash.com/photo-1630260409049-cc2763c7506e?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       icon: faHands,
       title: 'Massage',
-      description: 'Relaxing massages to ease stress.',
-      path: '/services/massage',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Melt away stress with our relaxing massage treatments. We offer a range of techniques to relieve tension, improve circulation, and promote wellness. Ideal for both body and mind renewal.',
+      path: '/massage',
+      image: 'https://images.unsplash.com/photo-1591343395082-e120087004b4?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       icon: faHandSparkles,
       title: 'Mani & Pedi',
-      description: ' Custom websites. Smart web apps. SEO that gets you seen. E-commerce that converts. Maintenance that keeps you running.',
-      path: '/services/mani-pedi',
-      image: 'https://images.unsplash.com/photo-1594647210801-5124307f3d51?q=80&w=1528&auto=format&fit=crop',
+      description: 'Treat your hands and feet to the care they deserve. Our manicures and pedicures include shaping, cuticle care, polish, and optional spa upgrades for total relaxation and flawless nails.',
+      path: '/mani-pedi',
+      image: 'https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmFpbHxlbnwwfHwwfHx8Mg%3D%3D',
     },
   ];
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -172,7 +174,7 @@ function Services() {
       ref={sectionRef}
       className="relative py-20 px-4 sm:px-8 bg-gradient-to-b from-white to-rose-50 flex items-center justify-center overflow-hidden"
     >
- 
+
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <motion.div
           className="text-section mb-12 sm:text-left"
@@ -207,11 +209,10 @@ function Services() {
               {services.map((service, index) => (
                 <motion.li
                   key={index}
-                  className={`text-lg font-sans cursor-pointer py-2 px-4 rounded-lg transition-colors ${
-                    activeService === index
+                  className={`text-lg font-sans cursor-pointer py-2 px-4 rounded-lg transition-colors ${activeService === index
                       ? 'bg-pink-50 text-pink-600 shadow-sm'
                       : 'text-gray-700 hover:bg-gray-100'
-                  }`}
+                    }`}
                   onClick={() => setActiveService(index)}
                   whileHover={{ x: 6, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -256,18 +257,20 @@ function Services() {
                     <h3 className="text-2xl sm:text-3xl font-semibold font-sans text-pink-600 mb-3">
                       {services[activeService].title}
                     </h3>
-                    <p className="text-gray-600 font-sans text-base sm:text-lg leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 font-sans text-base sm:text-lg leading-relaxed ">
                       {services[activeService].description}
                     </p>
-                    
+
                   </motion.div>
-                   <motion.button
-                    className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-2 rounded-full font-sans text-base hover:from-pink-600 hover:to-pink-700 transition-all hover:shadow-lg self-start mt-4"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    View More
-                  </motion.button>
+                  <Link to={services[activeService].path}>
+                    <motion.button
+                      className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-2 rounded-full font-sans text-base hover:from-pink-600 hover:to-pink-700 transition-all hover:shadow-lg self-start mt-4"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      View More
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>

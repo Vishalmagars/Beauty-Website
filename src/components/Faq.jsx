@@ -31,7 +31,7 @@ const FAQ = () => {
     <section className="py-20 bg-gradient-to-b from-white to-rose-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-12 text-center tracking-tight drop-shadow-md"
+          className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-12 text-center tracking-tight drop-shadow-md"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,7 +55,7 @@ const FAQ = () => {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <h3 className="font-['Playfair_Display'] text-lg sm:text-xl text-gray-900 font-semibold tracking-tight">
+                <h3 className="font-sans text-lg sm:text-xl text-gray-900 font-semibold tracking-tight">
                   {faq.question}
                 </h3>
                 <span className="text-rose-400">
@@ -69,7 +69,7 @@ const FAQ = () => {
                 animate={{ height: openIndex === index ? 'auto' : 0 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
               >
-                <p className="font-['Lora'] text-gray-700 text-base sm:text-lg leading-relaxed p-6 pt-0">
+                <p className="font-sans text-gray-700 text-base sm:text-lg leading-relaxed p-6 pt-0">
                   {faq.answer}
                 </p>
               </motion.div>
