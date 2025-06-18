@@ -31,7 +31,7 @@ const FAQ = () => {
     <section className="py-20 bg-gradient-to-b from-white to-rose-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-gray-900 mb-12 text-center tracking-tight drop-shadow-md"
+          className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-gray-700 mb-12 text-center tracking-tight drop-shadow-md"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -183,7 +183,7 @@ function Services() {
           animate={isVisible ? 'visible' : 'hidden'}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-gray-800 font-sans mb-4 tracking-tight"
+            className="text-4xl sm:text-5xl font-bold text-gray-700 font-sans mb-4 tracking-tight"
             variants={textVariants}
           >
             Our Serivces
@@ -192,10 +192,11 @@ function Services() {
             className="text-gray-700 text-lg sm:text-xl font-sans max-w-3xl mx-auto sm:mx-0"
             variants={textVariants}
           >
-            Custom websites. Smart web apps. SEO that gets you seen. E-commerce that converts. Maintenance that keeps you running.
+            Now specializing in Body Sugaring with Alexandria Professional — a gentle, all-natural method that removes even the shortest hairs (as little as 1/16" or 2mm). Our sugaring paste is hypoallergenic, non-comedogenic, paraben-free, and so pure you could eat it! Hair is removed in the direction of growth, reducing breakage and ingrown hairs, while leaving skin smooth and soft.
             <br />
-            I don’t just build websites — I craft digital experiences designed to grow your brand and boost your business. Whether you're launching, scaling, or reinventing, I offer end-to-end web services that combine sleek design, modern technology, and expert support.
+            We also offer full-body waxing for men and women using premium products suitable for all skin types. Whether you prefer waxing or sugaring, our expert services help refine hair growth over time while keeping your skin healthy and well cared for.
           </motion.p>
+
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
@@ -210,8 +211,8 @@ function Services() {
                 <motion.li
                   key={index}
                   className={`text-lg font-sans cursor-pointer py-2 px-4 rounded-lg transition-colors ${activeService === index
-                      ? 'bg-pink-50 text-pink-600 shadow-sm'
-                      : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-pink-50 text-pink-600 shadow-sm'
+                    : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   onClick={() => setActiveService(index)}
                   whileHover={{ x: 6, scale: 1.02 }}

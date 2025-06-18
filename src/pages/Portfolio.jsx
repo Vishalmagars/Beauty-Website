@@ -30,8 +30,8 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-rose-100/50 to-white">
-      <div className="max-w-7xl mx-auto px-4 py-15 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-gradient-to-b from-rose-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8">
         {/* Title and Description */}
         <motion.div
           className="text-center mb-12 sm:mb-16"

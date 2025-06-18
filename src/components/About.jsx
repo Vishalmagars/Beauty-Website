@@ -13,7 +13,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 font-sans mb-4 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-700 font-sans mb-4 tracking-tight">
             About Neva's Beauty
           </h2>
           <p className="text-gray-700 text-lg sm:text-xl font-sans max-w-3xl mx-auto sm:mx-0">

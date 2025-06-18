@@ -103,13 +103,7 @@ const WaxingPremiumAlt = () => {
         </motion.div>
 
         {/* Portfolio Button */}
-        <div className="mt-12 text-center">
-          <Link to="/portfolio">
-            <button className="bg-rose-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-rose-600 transition duration-300">
-              View Portfolio
-            </button>
-          </Link>
-        </div>
+      
 
       </div>
 
