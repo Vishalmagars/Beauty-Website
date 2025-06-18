@@ -39,10 +39,10 @@ const Hero = () => {
         >
 
           <div className="max-w-md mx-auto md:mx-0  text-left">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-rose-900 tracking-tight drop-shadow-md mb-3 sm:mb-4 md:mb-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-rose-900 tracking-tight drop-shadow-md mb-3 sm:mb-4 md:mb-5">
               Welcome to Neva's Beauty
             </h1>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-gray-800/90 mb-4 sm:mb-5 md:mb-6 max-w-sm">
+            <p className="text-lg sm:text-xl font-light text-gray-800/90 mb-4 sm:mb-5 md:mb-6 max-w-sm">
               Indulge in bespoke beauty crafted to elevate your radiance in a sanctuary of celestial elegance.
             </p>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center md:justify-start">
